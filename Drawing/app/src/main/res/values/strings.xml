@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Drawing</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="draw_color">drawColor()</string>
+    <string name="draw_circle">drawCircle()</string>
+    <string name="draw_rect">drawRect()</string>
+    <string name="draw_point">drawPoint()</string>
+    <string name="draw_oval">drawOval()</string>
+    <string name="draw_line">drawLine()</string>
+    <string name="draw_round_rect">drawRoundRect()</string>
+    <string name="draw_arc">drawArc()</string>
+    <string name="draw_path">drawPath()</string>
+    <string name="draw_bitmap">drawBitmap()</string>
+    <string name="draw_histogram">直方图</string>
+    <string name="draw_pie_chart">饼图</string>
+</resources>
