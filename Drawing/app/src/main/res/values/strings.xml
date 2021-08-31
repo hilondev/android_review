@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Drawing</string>
-    <string name="title_activity_main">MainActivity</string>
+    
     <string name="draw_color">drawColor()</string>
     <string name="draw_circle">drawCircle()</string>
     <string name="draw_rect">drawRect()</string>
@@ -13,4 +13,12 @@
     <string name="draw_bitmap">drawBitmap()</string>
     <string name="draw_histogram">直方图</string>
     <string name="draw_pie_chart">饼图</string>
+    
+    
+    <string name="paint_color">颜色渐变</string>
+    <string name="paint_bitmap_shader">BitmapShader</string>
+    <string name="canvas_action">画布操作</string>
+
+
+    
 </resources>

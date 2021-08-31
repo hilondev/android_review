@@ -12,17 +12,27 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Drawing"
+        android:theme="@style/Theme.Drawing.NoActionBar"
         android:usesCleartextTraffic="true">
 
-        <activity
-            android:name=".MainActivity"
-            android:theme="@style/Theme.Drawing.NoActionBar">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".basic.BasicDrawingActivity">
+        </activity>
+
+        <activity
+            android:name=".paint.PaintActivity">
+        </activity>
+
+        <activity
+            android:name=".touch.TouchEventActivity">
         </activity>
 
         <provider
@@ -34,7 +44,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>

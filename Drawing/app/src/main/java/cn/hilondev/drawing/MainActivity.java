@@ -1,49 +1,46 @@
 package cn.hilondev.drawing;
 
-import android.Manifest;
-import android.os.Build;
-import android.os.Bundle;
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.core.app.ActivityCompat;
-import com.google.android.material.tabs.TabLayout;
-import androidx.viewpager.widget.ViewPager;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
-import cn.hilondev.drawing.ui.main.PagerAdapter;
+import android.os.Bundle;
+import cn.hilondev.drawing.basic.BasicDrawingActivity;
+import cn.hilondev.drawing.paint.PaintActivity;
+import cn.hilondev.drawing.touch.TouchEventActivity;
 
-/**
- * <pre>
- *     MainActivity
- *     @author  : renhailong
- *     @since   : 2021/8/10 11:21
- *     @version : 1.0
- * </pre>
- */
 public class MainActivity extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        PagerAdapter pagerAdapter =
-                new PagerAdapter(this, getSupportFragmentManager());
-        ViewPager viewPager = findViewById(R.id.view_pager);
-        viewPager.setAdapter(pagerAdapter);
-        TabLayout tabs = findViewById(R.id.tabs);
-        tabs.setupWithViewPager(viewPager);
-        checkPermissions();
-    }
+        findViewById(R.id.basic).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, BasicDrawingActivity.class);
+                startActivity(intent);
+            }
+        });
 
-    private void checkPermissions(){
-        ActivityCompat.requestPermissions(this,new String[]{
-                Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-        }, 1000);
-    }
+        findViewById(R.id.paint).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, PaintActivity.class);
+                startActivity(intent);
+            }
+        });
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
-                                           @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        findViewById(R.id.touch).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TouchEventActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        SharedPreferences sp = getSharedPreferences("test", MODE_PRIVATE);
+        sp.edit().putString("key", "value").commit();
     }
 }
