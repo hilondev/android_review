@@ -2,7 +2,6 @@ package cn.hilondev.drawing.paint.view;
 
 import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.PointF;
@@ -25,6 +24,7 @@ public class ShapeItem {
 
     private int rotateDegree = 0;
     private float transX = 0f, transY = 0f;
+    private float bornScale = 1f;
     private float scale = 1f;
     private RectF clipRect;
     private PointF centerPoint;
@@ -32,7 +32,8 @@ public class ShapeItem {
     public ShapeItem(float scale, float transX, float transY,
                      RectF clipRect,
                      PointF centerPoint) {
-        this.scale = scale;
+        this.bornScale = scale;
+        this.scale = scale / bornScale;
         this.transX = transX;
         this.transY = transY;
         this.clipRect = clipRect;
@@ -86,7 +87,7 @@ public class ShapeItem {
     }
 
     public void setScale(float scale) {
-        this.scale = scale;
+        this.scale = scale / bornScale;
     }
 
     public RectF getClipRect() {
@@ -126,7 +127,7 @@ public class ShapeItem {
         canvas.save();
         canvas.clipRect(clipRect);
         canvas.translate(centerPoint.x, centerPoint.y);
-        canvas.rotate(rotateDegree , 0, 0);
+        canvas.rotate(rotateDegree, 0, 0);
         canvas.scale(scale, scale);
         canvas.drawPath(path, paint);
         canvas.restore();

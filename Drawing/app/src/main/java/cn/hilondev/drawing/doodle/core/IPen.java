@@ -1,6 +1,7 @@
 package cn.hilondev.drawing.doodle.core;
 
 import android.graphics.Paint;
+import androidx.annotation.NonNull;
 
 /**
  * <pre>
@@ -17,5 +18,5 @@ public interface IPen {
      *
      * @param paint
      */
-    void config(Paint paint);
+    void config(@NonNull Paint paint);
 }

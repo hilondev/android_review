@@ -2,6 +2,7 @@ package cn.hilondev.drawing.doodle.core;
 
 import android.graphics.Canvas;
 import android.graphics.Paint;
+import androidx.annotation.NonNull;
 
 /**
  * <pre>
@@ -19,5 +20,5 @@ public interface IShape extends ITouchEvent {
      * @param canvas
      * @param paint
      */
-    void draw(Canvas canvas, Paint paint);
+    void draw(@NonNull Canvas canvas, @NonNull Paint paint);
 }

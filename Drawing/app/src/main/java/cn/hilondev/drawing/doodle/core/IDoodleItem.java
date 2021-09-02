@@ -1,5 +1,9 @@
 package cn.hilondev.drawing.doodle.core;
 
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import androidx.annotation.NonNull;
 import java.util.List;
 
 /**
@@ -10,7 +14,21 @@ import java.util.List;
  *     @version : 1.0
  * </pre>
  */
-public interface IDoodleItem {
+public interface IDoodleItem extends ITouchEvent {
+
+    /**
+     * 设置x偏移量
+     *
+     * @param transX
+     */
+    void setTransX(float transX);
+
+    /**
+     * 设置y偏移量
+     *
+     * @param transY
+     */
+    void setTransY(float transY);
 
     /**
      * 设置缩放系数
@@ -50,12 +68,50 @@ public interface IDoodleItem {
      *
      * @param list 列表
      */
-    void addToList(List<IDoodleItem> list);
+    void addToList(@NonNull List<IDoodleItem> list);
 
     /**
      * 从列表中删除当前item对象
      *
      * @param list 列表
      */
-    void removeFromList(List<IDoodleItem> list);
+    void removeFromList(@NonNull List<IDoodleItem> list);
+
+    /**
+     * 绘制
+     *
+     * @param canvas
+     * @param paint
+     */
+    void draw(@NonNull Canvas canvas, @NonNull Paint paint);
+
+    /**
+     * 设置笔刷对象
+     *
+     * @param pen
+     */
+    void setPen(IPen pen);
+
+    /**
+     * 获取笔刷对象
+     *
+     * @return
+     */
+    IPen getPen();
+
+    /**
+     * 设置形状对象
+     *
+     * @param shape
+     */
+    void setShape(IShape shape);
+
+    /**
+     * 获取形状对象
+     *
+     * @return
+     */
+    IShape getShape();
+
+    void setClipRect(RectF clipRect);
 }

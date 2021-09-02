@@ -23,16 +23,20 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".basic.BasicDrawingActivity">
+        <activity android:name=".basic.BasicDrawingActivity">
+
         </activity>
 
-        <activity
-            android:name=".paint.PaintActivity">
+        <activity android:name=".paint.PaintActivity">
+
         </activity>
 
-        <activity
-            android:name=".touch.TouchEventActivity">
+        <activity android:name=".touch.TouchEventActivity">
+
+        </activity>
+
+        <activity android:name=".doodle.DoodleActivity">
+
         </activity>
 
         <provider

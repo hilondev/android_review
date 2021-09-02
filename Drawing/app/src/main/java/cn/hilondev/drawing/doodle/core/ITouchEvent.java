@@ -1,6 +1,7 @@
 package cn.hilondev.drawing.doodle.core;
 
 import android.graphics.PointF;
+import androidx.annotation.NonNull;
 
 /**
  * <pre>
@@ -17,19 +18,19 @@ public interface ITouchEvent {
      *
      * @param p
      */
-    void down(PointF p);
+    void down(@NonNull PointF p);
 
     /**
      * 移动到某个点
      *
      * @param p
      */
-    void move(PointF p);
+    void move(@NonNull PointF p);
 
     /**
      * 从某个点抬起
      *
      * @param p
      */
-    void up(PointF p);
+    void up(@NonNull PointF p);
 }

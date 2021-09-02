@@ -24,4 +24,10 @@
         android:layout_height="wrap_content"
         android:text="事件分发" />
 
+    <Button
+        android:id="@+id/doodle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="涂鸦" />
+
 </LinearLayout>

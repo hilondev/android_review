@@ -56,7 +56,7 @@ public class DrawBitmapView extends View {
         // Calculate inSampleSize
         options.inSampleSize = calculateInSampleSize(options, reqWidth, reqHeight);
         // 并不是向下取2的幂
-        options.inSampleSize = 5;
+        //options.inSampleSize = 5;
 
         // Decode bitmap with inSampleSize set
         options.inJustDecodeBounds = false;
@@ -193,9 +193,9 @@ public class DrawBitmapView extends View {
     }
 
     private Bitmap getResizedBitmap(int reqWidth, int reqHeight) throws IOException {
-        //Bitmap sourceBitmap = decodeResourceBitmap(reqWidth, reqHeight);
+        Bitmap sourceBitmap = decodeResourceBitmap(reqWidth, reqHeight);
         //Bitmap sourceBitmap = decodeFileBitmap(reqWidth, reqHeight);
-        Bitmap sourceBitmap = decodeFileStreamBitmap(reqWidth, reqHeight);
+        //Bitmap sourceBitmap = decodeFileStreamBitmap(reqWidth, reqHeight);
         Log.d("Henry", "reqWidth=" + reqWidth);
         Log.d("Henry", "reqHeight=" + reqHeight);
 
